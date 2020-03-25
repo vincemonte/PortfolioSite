@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    <title>Vincent Monteleone's current workflow: coding and personal-writing projects!</title>
+  </head>
+
+  <body>
+    <header>
+
+      <nav class="navbar">
+        <ul>
+          <div class="nav-page-links">
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('writings') }}">Writings</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </div>
+          <div class="nav-image-links">
+              <li><a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a></li>
+          </div>
+        </ul>
+
+      </nav>
+    </header>
+
+    <main role="main">
+        {% block content %}{% endblock %}
+    </main>
+  </body>
+
+  <div class="sidebar">
+    <h2>About Myself</h2>
+    <aside>
+      <p>This is a little bit about me...</p>
+      <!--add a linked in link-->
+    </aside>
+
+  </div>
+  <footer>@vincemonte 2020</footer>
+</html>

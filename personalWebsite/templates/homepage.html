@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{%block content%}
+    <h1 class="page-header">What I've Been Up To</h1>
+    <section class="article-posts">
+        {% for post in posts %}
+        <article class="media-posting">
+          <h4 class=post-title>{{ post.title }}</h4>
+          <p class=post-content>{{ post.content }}</p>
+          
+        </article>
+        {% endfor %}
+    </section>
+{%endblock content%}
