@@ -27,15 +27,18 @@
     <main role="main">
         {% block content %}{% endblock %}
     </main>
+
+    <!--If we're on the home page, show the aside-->
+    {% if request.path == "/home" %}
+    <div class="sidebar">
+      <h2>About Myself</h2>
+      <aside>
+        <p>This is a little bit about me...</p>
+        <!--add a linked in link-->
+      </aside>
+    {% endif %}
+    </div>
+
+    <footer>@vincemonte 2020</footer>
   </body>
-
-  <div class="sidebar">
-    <h2>About Myself</h2>
-    <aside>
-      <p>This is a little bit about me...</p>
-      <!--add a linked in link-->
-    </aside>
-
-  </div>
-  <footer>@vincemonte 2020</footer>
 </html>
