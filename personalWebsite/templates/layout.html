@@ -15,6 +15,7 @@
             <li><a href="{{ url_for('projects') }}">Projects</a></li>
             <li><a href="{{ url_for('writings') }}">Writings</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('addpost') }}">Add Post</a></li>
           </div>
           <div class="nav-image-links">
               <li><a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a></li>
@@ -23,13 +24,13 @@
 
       </nav>
     </header>
-
+    <div class="background-image"></div>
     <main role="main">
         {% block content %}{% endblock %}
     </main>
 
     <!--If we're on the home page, show the aside-->
-    {% if request.path == "/home" %}
+    {% if request.path == "/home" or request.path == "/"%}
     <div class="sidebar">
       <h2>About Myself</h2>
       <aside>
