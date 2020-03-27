@@ -1,7 +1,7 @@
 from personalWebsite import db
 from datetime import datetime
 
-class Post(db.Model):
+class HomePost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False)
@@ -9,3 +9,8 @@ class Post(db.Model):
     #image = db.Column(db.String(20), nullable=False)
     def __repr__(self):
         return f"Post('{self.title}'. {self.date_posted})"
+
+class ProjectPost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False)

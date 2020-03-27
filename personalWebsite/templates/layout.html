@@ -10,6 +10,9 @@
 
       <nav class="navbar">
         <ul>
+          <div class="logo">
+            <li><img src="{{url_for('static', filename='images/VLMLogo_White32px.png')}}"></li>
+          </div>
           <div class="nav-page-links">
             <li><a href="{{ url_for('homepage') }}">Home</a></li>
             <li><a href="{{ url_for('projects') }}">Projects</a></li>
@@ -24,7 +27,9 @@
 
       </nav>
     </header>
-    <div class="background-image"></div>
+    <div class="background-filter">
+      <div class="background-image"></div>
+    </div>
     <main role="main">
         {% block content %}{% endblock %}
     </main>
