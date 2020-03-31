@@ -30,6 +30,7 @@
 
 
 ### Colors:
+- Navbar background: #34769C
 - Cream: #fffacd
   - use instead of white
 - add an outline to the post headings text (h4)
