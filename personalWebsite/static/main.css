@@ -6,6 +6,7 @@ html{
   height: 100%;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
+  overflow: auto;
 }
 
 body{
@@ -15,7 +16,7 @@ body{
 }
 
 header{
-  margin-bottom: 3.5em;
+  margin-bottom: 2.5em;
 }
 
 
@@ -54,18 +55,10 @@ main{
 }
 
 
-main{
-  margin-left: 15px;
-  float: left;
-  width: 80%;
-}
-
 
 .page-header{
-  padding-left: 5em;
   padding-top: .2em;
-  margin-bottom: 1em;
-  color: white;
+  margin-top: 1em;
 }
 
 .navbar{
@@ -86,10 +79,12 @@ main{
   background-color: #34769C;
   overflow: hidden;
 }
-.logo li{
+.logo {
   float: left;
-  padding: .8em 1em;
-  margin-right: .5em;
+  display: block;
+  padding-top: .3em;
+  height: 44px;
+  width: 44px;
 }
 .nav-page-links li{
   float: left;
@@ -113,22 +108,24 @@ main{
   background-color: #194D6A;
 }
 
-.sidebar{
-  width: 15%;
-  float: right;
-  margin-right: 2%;
-  margin-top: 1%;
-  background-color: white;
+.about-text p{
+  text-indent: 2em;
 }
-.sidebar h2{
-  color: white;
-  padding: 1%;
-  text-align: center;
-  background-color: #34769C;
-  margin: 0;
+
+::-webkit-scrollbar {
+  width: 10px;
 }
-.sidebar aside p{
-  text-align: center;
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 footer{

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico')}}" type="image/x-icon"/>
     <title>Vincent Monteleone's current workflow: coding and personal-writing projects!</title>
   </head>
 
@@ -13,9 +14,7 @@
     <header>
       <nav class="navbar">
         <ul>
-          <div class="logo">
-            <li><img src="{{url_for('static', filename='images/VLMLogo_32px.png')}}"></li>
-          </div>
+          <li><img class="logo" src="{{url_for('static', filename='images/VLMLogoWhite.svg')}}"></li>
           <div class="nav-page-links">
             <li><a href="{{ url_for('homepage') }}">Home</a></li>
             <li><a href="{{ url_for('projects') }}">Projects</a></li>
@@ -29,26 +28,25 @@
         </ul>
       </nav>
     </header>
-
+<!--
     <div class="background-filter">
       <div class="background-image"></div>
     </div>
-
+-->
     <main role="main">
         {% block content %}{% endblock %}
     </main>
+<!--
 
-    <!--If we're on the home page, show the aside-->
     {% if request.path == "/home" or request.path == "/"%}
     <div class="sidebar">
       <h2>About Myself</h2>
       <aside>
         <p>This is a little bit about me...</p>
-        <!--add a linked in link-->
       </aside>
     {% endif %}
     </div>
-
+-->
     <footer>@vincemonte 2020</footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
