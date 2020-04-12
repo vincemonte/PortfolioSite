@@ -17,8 +17,9 @@
           <li><img class="logo" src="{{url_for('static', filename='images/VLMLogoWhite.svg')}}"></li>
           <div class="nav-page-links">
             <li><a href="{{ url_for('homepage') }}">Home</a></li>
-            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('coding') }}">Coding</a></li>
             <li><a href="{{ url_for('writings') }}">Writings</a></li>
+            <li><a href="{{ url_for('photography') }}">Photography</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('addpost') }}">Add Post</a></li>
           </div>
@@ -34,6 +35,15 @@
     </div>
 -->
     <main role="main">
+      {%with messages = get_flashed_messages(with_categories=true) %}
+            {%if messages%}
+              {%for category, message in messages%}
+              <div class="alert alert-{{category}}">
+                {{message}}
+              </div>
+              {% endfor %}
+            {% endif %}
+        {% endwith%}
         {% block content %}{% endblock %}
     </main>
 <!--
