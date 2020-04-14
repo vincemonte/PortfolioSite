@@ -111,6 +111,11 @@ main{
   background-color: #194D6A;
 }
 
+.project_type_image{
+  display: block;
+  float: left;
+}
+
 .about-text{
   margin-bottom: 4em;
 }

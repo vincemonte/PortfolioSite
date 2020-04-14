@@ -28,7 +28,7 @@ def about():
     return render_template('about.html')
 
 def set_type_image(form_type_image):
-    path = 'static/images/'
+    path = 'images/'
     if form_type_image == 'code':
         fname = 'coding_project_type.png'
     elif form_type_image == 'writing':

@@ -36,3 +36,8 @@
 - add an outline to the post headings text (h4)
 - white ripple background source: https://www.pexels.com/photo/curve-design-futuristic-lines-911738/
   - check if I may use in published site
+
+## Project Icon Authors
+- [Code](https://www.flaticon.com/authors/icongeek26)
+- [Writing](https://www.flaticon.com/authors/icongeek26)
+- [Photography](https://www.flaticon.com/authors/icongeek26)
