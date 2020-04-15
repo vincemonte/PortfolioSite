@@ -25,6 +25,20 @@
       </div>
 
       <div class="form-group">
+        {{ form.synopsis.label(class="form-control-label")}}
+         {% if form.synopsis.errors %}
+          {{ form.synopsis(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+               {% for error in form.synopsis.errors %}
+                <span>{{ error }}</span>
+               {% endfor %}
+          </div>
+        {% else %}
+          {{ form.synopsis(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+
+      <div class="form-group">
         {{ form.content.label(class="form-control-label")}}
          {% if form.content.errors %}
           {{ form.content(class="form-control form-control-lg is-invalid")}}
@@ -39,18 +53,33 @@
       </div>
 
       <div class="form-group">
-        {{ form.type_image.label(class="form-control-label")}}
-         {% if form.type_image.errors %}
-          {{ form.type_image(class="form-control form-control-lg is-invalid")}}
+        {{ form.type.label(class="form-control-label")}}
+         {% if form.type.errors %}
+          {{ form.type(class="form-control form-control-lg is-invalid")}}
           <div class="invalid-feedback">
-               {% for error in form.type_image.errors %}
+               {% for error in form.type.errors %}
                 <span>{{ error }}</span>
                {% endfor %}
           </div>
         {% else %}
-          {{ form.type_image(class="form-control form-control-md")}}
+          {{ form.type(class="form-control form-control-md")}}
         {% endif %}
       </div>
+
+      <div class="form-group">
+        {{ form.images.label(class="form-control-label")}}
+         {% if form.images.errors %}
+          {{ form.images(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+               {% for error in form.images.errors %}
+                <span>{{ error }}</span>
+               {% endfor %}
+          </div>
+        {% else %}
+          {{ form.images(class="form-control form-control-md")}}
+        {% endif %}
+      </div>
+
 
     </fieldset>
       <div class="form-group">
