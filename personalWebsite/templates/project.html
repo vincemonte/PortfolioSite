@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container">
     <h1 class="display-4 page-header">{{ post.title }}</h1>
-    <small class="text-muted">{{post.date_posted}}</small>
+    <small class="text-muted">{{post.date_posted.strftime('%m-%d-%Y')}}</small>
     <hr class="my-3">
      <section class="text-left about-text">
        <p class="lead">{{ post.content }}</p>

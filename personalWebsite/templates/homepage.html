@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {%block content%}
-    <div class="jumbotron text-left bg-dark">
+    <div class="jumbotron text-left">
       <div class="container text-white">
         <h1 class="display-4"> Welcome To My Website!</h1>
         <p class="lead">Hi, my name is Vincent Monteleone and this is my portfolio site</p>
@@ -20,8 +20,6 @@
                 <a class = "card-title" href="{{ url_for('project', project_id=post.project_id) }}">{{ post.project.title }}</a>
               </div>
               <div class="card-body">
-                <small class="text-muted"> Project Type Image: {{ post.type_image }}</small>
-                <hr>
                 <p class= "card-text"> {{ post.content }} </p>
               </div>
               <div class="card-footer text-right">
@@ -32,7 +30,8 @@
           {% endfor %}
         </div>
       </div>
-      <div class="container mt-5">
+      </section>
+      <div class="container mt-5 text-center">
         {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
           {% if page_num %}
             {% if posts.page == page_num %}
