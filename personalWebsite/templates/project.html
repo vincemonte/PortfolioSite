@@ -7,5 +7,10 @@
      <section class="text-left about-text">
        <p class="lead">{{ post.content }}</p>
      </section>
+     {% if post.files %}
+      {%for file in files%}
+        <img src="{{url_for(post.files + '/' + file)}}">
+      {%endfor%}
+     {% endif %}
   </div>
 {% endblock content%}

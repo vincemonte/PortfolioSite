@@ -3,7 +3,7 @@
 {%block content%}
 <div class="content-section m-5 p-3">
   <!--Will post the information to the same route (hence empty string)-->
-  <form method="POST" action="">
+  <form method="POST" action="" enctype="multipart/form-data">
     <!--adding a csf token-->
     {{form.hidden_tag() }}
     <fieldset class = "form-group">
@@ -19,7 +19,7 @@
                 <span>{{ error }}</span>
                {% endfor %}
           </div>
-        {% else %} <!--Else submit username form-->
+        {% else %}
           {{ form.title(class="form-control form-control-lg")}}
         {% endif %}
       </div>
@@ -67,16 +67,16 @@
       </div>
 
       <div class="form-group">
-        {{ form.images.label(class="form-control-label")}}
-         {% if form.images.errors %}
-          {{ form.images(class="form-control form-control-lg is-invalid")}}
+        {{ form.files.label(class="form-control-label")}}
+         {% if form.files.errors %}
+          {{ form.files(class="form-control form-control-lg is-invalid")}}
           <div class="invalid-feedback">
-               {% for error in form.images.errors %}
+               {% for error in form.files.errors %}
                 <span>{{ error }}</span>
                {% endfor %}
           </div>
         {% else %}
-          {{ form.images(class="form-control form-control-md")}}
+          {{ form.files(class="form-control form-control-md")}}
         {% endif %}
       </div>
 

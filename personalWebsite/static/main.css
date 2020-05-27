@@ -3,59 +3,20 @@ I set the entire pages margin to 0px so the navbar would stretch all the way to 
 */
 
 html{
-  min-height: 100%;
-  min-width: 100%;
-  font-family: 'Montserrat', sans-serif;
-  overflow: auto;
+
 }
 
 body{
   margin: 0;
-  /* Remember to put these back?
-  min-height: 100%;
-  min-width: 100%;
-  */
-}
-
-header{
-  margin-bottom: 2.5em;
+  background-image: url(images/GrayWallBackground.jpg);
+  background-position: top;
 }
 
 
 main{
-  min-width: 1em;
+  padding-top: 2.5em;
+  font-family: 'Work Sans', sans-serif;
 }
-
-.background-filter{
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: black;
-  min-width: 100%;
-  min-height: 100%;
-  background-attachment: fixed;
-  background-size: cover;
-  opacity: .9;
-}
-
-.background-image{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-image: url(images/white-curve-background.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  opacity: .4;
-}
-
 
 
 .page-header{
@@ -72,6 +33,7 @@ main{
   left: 0;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .navbar ul{
@@ -79,7 +41,7 @@ main{
   width: inherit;
   height: inherit;
   list-style-type: none;
-  background-color: #34769C;
+  background-color: #27506E;
   overflow: hidden;
 }
 .logo {
@@ -112,12 +74,53 @@ main{
 }
 
 .jumbotron{
-  background-color: #677d91;
+  background-image: url(images/cyberforce.jpg);
+  background-position: 50% 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  font-family: 'Crimson Text', serif;
+}
+
+.jumbotron .container{
+  background-color: rgba(20, 20, 21, 0.8);
+  padding: .8em;
+}
+
+.home-articles .row{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: auto;
+}
+
+.col-md-6{
+  margin-right: auto;
+  padding: 0 4em 0 4em;
+}
+
+.row .card{
+  border-style: none;
+  background-color: #DCDCDC;
+}
+
+.row .card-header{
+  background-color: #4C7695;
+}
+
+.card-title{
+  text-decoration: none;
+  color: #FAF4EE;
+  font-size: 1.3em;
+  font-weight: 500;
+  text-align: left;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .project_type_image{
   display: block;
   float: left;
+  padding-left: .25em;
 }
 
 .about-text{

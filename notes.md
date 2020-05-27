@@ -1,16 +1,20 @@
 # ***Notes and Checklist***
 ## **Checklist**:
 ### General:
-- [ ] Use em to make it easier to position things
+- [ ] Change colors
+- [ ] Change Bootstrap Card Padding and Margins
+- [ ] Add a login for me to update and delete posts 
+- [X] Use em to make it easier to position things
   - switch percentages to em
-- [ ] Scale page to when resizing browser (i.e. responsive page)
+- [X] Scale page to when resizing browser (i.e. responsive page)
   - Scale for other devices
 - [X] Change the box shadows of the home page posts
 
+
 ### **To be on main layout:**
-- [ ] Navbar
-  - [ ] logo
-  - [ ] Up-down color gradient
+- [X] Navbar
+  - [X] logo
+  - [X] Up-down color gradient
   - [X] site links
   - [X] on the right side, add the GitHub logo and link
 - [ ] Footer

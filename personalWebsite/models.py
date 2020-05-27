@@ -7,7 +7,7 @@ class Project(db.Model):
     title = db.Column(db.String(100), nullable=False)
     type = db.Column(db.String(20), nullable=False)
     content= db.Column(db.Text, nullable=True)
-    images = db.Column(db.String(50), nullable=True)
+    files = db.Column(db.String(50), nullable=True) #holds the path to the file images
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.now)
     home_post = db.relationship('HomePost', backref='project', uselist=False)
     def __repr__(self):
