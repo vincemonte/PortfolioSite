@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
   <div class="container">
-    <h1 class="display-4 page-header">{{ post.title }}</h1>
-    <small class="text-muted">{{post.date_posted.strftime('%m-%d-%Y')}}</small>
+    <h1 class="display-4 page-header">{{ project_post.title }}</h1>
+    <small class="text-muted">{{project_post.date_posted.strftime('%m-%d-%Y')}}</small>
     <hr class="my-3">
      <section class="text-left about-text">
-       <p class="lead">{{ post.content }}</p>
+       <p class="lead">{{ project_post.content }}</p>
      </section>
-     {% if post.files %}
+     {% if project_post.files %}
       {%for file in files%}
-        <img src="{{url_for(post.files + '/' + file)}}">
+        <img src="{{url_for('static', filename=file)}}">
       {%endfor%}
      {% endif %}
   </div>

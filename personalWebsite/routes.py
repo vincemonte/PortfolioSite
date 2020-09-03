@@ -21,9 +21,9 @@ def about():
 #Eventually each project will need its own type of route
 @app.route('/project/<int:project_id>')
 def project(project_id):
-    post = Project.query.get_or_404(project_id)
-    files = os.listdir(post.files)
-    return render_template('project.html', post=post, files=files)
+    project_post = Project.query.get_or_404(project_id)
+    files = get_project_files(project_post)
+    return render_template('project.html', project_post=project_post, files=files)
 
 @app.route('/coding', methods=['GET'])
 def coding():
@@ -52,11 +52,33 @@ def set_type_image(form_type_image):
     path += fname
     return path
 
-def save_file(form_file, dir_title):
+def save_file(form_file, proj_dir_path):
     fn = secure_filename(form_file.filename)
-    path = os.path.join(app.root_path, 'static/images/project_images', dir_title, fn)
-    form_file.save(path)
+    file_path = os.path.join(proj_dir_path, fn)
+    form_file.save(file_path)
     return fn
+
+def save_project_files(form):
+    #create the relative path to make directory
+    rel_dir_path = os.path.join(app.config['UPLOAD_FOLDER'], form.title.data.strip().replace(" ", ""))
+    full_dir_path = os.path.join(app.root_path, 'static', rel_dir_path)
+    os.mkdir(full_dir_path)
+    for file in form.files.data:
+        save_file(file, full_dir_path)
+    return rel_dir_path
+
+'''
+Returns all files in the project's directory as a full file path
+Return type: list
+'''
+def get_project_files(project):
+    full_dir_path = os.path.join(app.root_path, 'static', project.files)
+    files = os.listdir(full_dir_path)
+    file_paths = []
+    for file in files:
+        # we simply join them here to avoid concatenation in HTML file
+        file_paths.append(os.path.join(project.files, file))
+    return file_paths
 
 @app.route('/addpost', methods=['GET', 'POST'])
 def addpost():
@@ -64,11 +86,8 @@ def addpost():
     if form.validate_on_submit():
         project_post = Project(title=form.title.data, type=form.type.data, content=form.content.data)
         if form.files.data:
-            file_dir_path = os.path.join(app.root_path, 'static/images/project_images', form.title.data).strip().replace(" ", "")
-            os.mkdir(file_dir_path)
-            for file in form.files.data:
-                save_file(file, file_dir_path)
-            project_post.files = file_dir_path
+            # we assign the full path retuned from save_project_files function to the Project db object
+            project_post.files = save_project_files(form)
         type_image = set_type_image(form.type.data)
         home_post = HomePost(type_image=type_image, content=form.synopsis.data, project=project_post)
         db.session.add(project_post)
