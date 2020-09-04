@@ -21,7 +21,7 @@ main{
 
 .page-header{
   padding-top: .2em;
-  margin-top: 1em;
+  margin-top: .4em;
 }
 
 .navbar{
@@ -123,12 +123,16 @@ main{
   padding-left: .25em;
 }
 
-.about-text{
+.focused-text{
   margin-bottom: 4em;
 }
 
-.about-text p{
+.focused-text p{
   text-indent: 2em;
+}
+
+.text-white-2{
+  color: #E7E9EE;
 }
 
 ::-webkit-scrollbar {
