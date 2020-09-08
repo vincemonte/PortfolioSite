@@ -1,6 +1,6 @@
 import os
 from personalWebsite import app
-
+from werkzeug.utils import secure_filename
 def set_type_image(form_type_image):
     path = 'images/'
     if form_type_image == 'coding':

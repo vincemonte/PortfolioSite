@@ -4,7 +4,6 @@ from PIL import Image
 from personalWebsite import app, db
 from personalWebsite.forms import PostForm
 from personalWebsite.models import Project, HomePost
-from werkzeug.utils import secure_filename
 from personalWebsite.utils import save_file, save_project_files, get_project_files, set_type_image
 
 @app.route('/')
@@ -46,17 +45,20 @@ def photography():
 
 @app.route('/addpost', methods=['GET', 'POST'])
 def addpost():
-    form = PostForm()
-    if form.validate_on_submit():
-        project_post = Project(title=form.title.data, type=form.type.data, content=form.content.data)
-        if 'files' in request.files or 'file[]' in request.files: #if there are one or more in the post request...
-            # we assign the full path returned from save_project_files function to the Project db object
-            project_post.files = save_project_files(form)
-        type_image = set_type_image(form.type.data)
-        home_post = HomePost(type_image=type_image, content=form.synopsis.data, project=project_post)
-        db.session.add(project_post)
-        db.session.add(home_post)
-        db.session.commit()
-        flash('Post has been created.', 'success')
+    if request.remote_addr == '127.0.0.1': #this will need to be changed for my pc on the network once deployed
+        form = PostForm()
+        if form.validate_on_submit():
+            project_post = Project(title=form.title.data, type=form.type.data, content=form.content.data)
+            if 'files' in request.files or 'file[]' in request.files: #if there are one or more in the post request...
+                # we assign the full path returned from save_project_files function to the Project db object
+                project_post.files = save_project_files(form)
+            type_image = set_type_image(form.type.data)
+            home_post = HomePost(type_image=type_image, content=form.synopsis.data, project=project_post)
+            db.session.add(project_post)
+            db.session.add(home_post)
+            db.session.commit()
+            flash('Post has been created.', 'success')
+            return redirect(url_for('homepage'))
+        return render_template('addpost.html', title="New Post",form=form)
+    else:
         return redirect(url_for('homepage'))
-    return render_template('addpost.html', title="New Post",form=form)

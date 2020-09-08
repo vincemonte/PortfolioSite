@@ -22,7 +22,10 @@
             <li><a href="{{ url_for('writings') }}">Writings</a></li>
             <li><a href="{{ url_for('photography') }}">Photography</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
+            <!-- Remember to change this to PC on local network once deployed -->
+            {%if request.remote_addr == '127.0.0.1'%}
             <li><a href="{{ url_for('addpost') }}">Add Post</a></li>
+            {%endif%}
           </div>
           <div class="nav-image-links">
               <li><a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a></li>

@@ -41,3 +41,6 @@
 
 ## 9/03/20 Entry:
   I've adjusted the way that project image files are saved to the system to ensure it is done relatively, as well as the way said files are passed into the HTML file. More effort has to be put into commenting; it wasn't easy trying to figure out what me from 5 months ago was thinking, off the bat.  
+
+## 9/07/20 Entry:
+  Identified CSS breakpoints to use media queries for and will implement in next installment; images must be dynamically scaled as well. I've designed the website's add post page and nav bar link to be viewable from my local machine only and tested with a device connected to the network: BINGO. Changed the site to be hosted on local network instead of local machine to check for viewport sizing on a list of popular devices. I'm going to keep it basic and focus on the general phone and tablet sizes. Deployment is on the horizon!
