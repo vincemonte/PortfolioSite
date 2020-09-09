@@ -2,20 +2,17 @@
 I set the entire pages margin to 0px so the navbar would stretch all the way to the side, we can later change other
 */
 
-html{
-
-}
-
 body{
   margin: 0;
   background-image: url(images/GrayWallBackground.jpg);
   background-position: top;
+  width: 100%;
 }
-
 
 main{
   padding-top: 2.5em;
   font-family: 'Work Sans', sans-serif;
+
 }
 
 
@@ -24,25 +21,13 @@ main{
   margin-top: .4em;
 }
 
-.navbar{
-  width: 100%;
-  height: 3em;
+.navbar {
+  overflow: hidden;
+  background-color: #27506E;
+  font-family: 'Roboto Mono', monospace;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto Mono', monospace;
-}
-
-.navbar ul{
-  padding:inherit;
-  width: inherit;
-  height: inherit;
-  list-style-type: none;
-  background-color: #27506E;
-  overflow: hidden;
+  width: 100%;
 }
 .logo {
   float: left;
@@ -51,26 +36,34 @@ main{
   height: 44px;
   width: 44px;
 }
-.nav-page-links li{
+
+.nav-page-links{
+  position: absolute;
+  left: 4em;
+}
+
+.nav-page-links a{
   float: left;
-}
-
-.nav-image-links li{
-  float: right;
-  padding-top: 8px;
-  padding-right: .75em;
-
-}
-.nav-page-links li a{
   display: block;
   color: white;
   text-decoration: none;
   text-align: center;
   padding: .8em 1em;
-
+  font-size: 17px;
 }
-.nav-page-links li a:hover{
+
+.nav-page-links a:hover{
   background-color: #194D6A;
+}
+
+.navbar .nav-toggle {
+  display: none;
+}
+
+.nav-image-links a{
+  float: right;
+  padding-right: .75em;
+
 }
 
 .jumbotron{
@@ -98,6 +91,12 @@ main{
   padding: 0 4em 0 4em;
 }
 
+.col-lg-9{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: auto;
+}
+
 .row .card{
   border-style: none;
   background-color: #DCDCDC;
@@ -116,10 +115,21 @@ main{
   font-family: 'Roboto Mono', monospace;
 }
 
+.post-photo{
+  object-fit: cover;
+}
+
 .project_type_image{
   display: block;
   float: left;
   padding-left: .25em;
+}
+
+.ellipsis-text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .focused-text{
@@ -133,6 +143,8 @@ main{
 .text-white-2{
   color: #E7E9EE;
 }
+
+
 
 ::-webkit-scrollbar {
   width: 10px;

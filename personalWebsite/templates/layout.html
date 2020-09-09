@@ -7,30 +7,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='devices.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico')}}" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Vincent Monteleone's Current Workflow: coding and personal-writing projects!</title>
   </head>
 
   <body>
     <header>
       <nav class="navbar">
-        <ul>
-          <li><img class="logo" src="{{url_for('static', filename='images/VLMLogoWhite.svg')}}"></li>
-          <div class="nav-page-links">
-            <li><a href="{{ url_for('homepage') }}">Home</a></li>
-            <li><a href="{{ url_for('coding') }}">Coding</a></li>
-            <li><a href="{{ url_for('writings') }}">Writings</a></li>
-            <li><a href="{{ url_for('photography') }}">Photography</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
+          <img class="logo" src="{{url_for('static', filename='images/VLMLogoWhite.svg')}}">
+          <div class="nav-page-links" id="page-links">
+            <a href="{{ url_for('homepage') }}">Home</a>
+            <a href="{{ url_for('coding') }}">Coding</a>
+            <a href="{{ url_for('writings') }}">Writings</a>
+            <a href="{{ url_for('photography') }}">Photography</a>
+            <a href="{{ url_for('about') }}">About</a>
             <!-- Remember to change this to PC on local network once deployed -->
             {%if request.remote_addr == '127.0.0.1'%}
-            <li><a href="{{ url_for('addpost') }}">Add Post</a></li>
+            <a href="{{ url_for('addpost') }}">Add Post</a>
             {%endif%}
+            <a href="javascript:void(0);" class="nav-toggle" onclick="dropBar()">
+              <i class="fa fa-bars"></i>
+            </a>
           </div>
           <div class="nav-image-links">
-              <li><a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a></li>
-          </div>
-        </ul>
+              <a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a>
+
+
       </nav>
     </header>
     <main role="main">
@@ -50,5 +54,15 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+      function dropBar() {
+        var x = document.getElementById("page-links");
+        if (x.className === "nav-page-links") {
+          x.className += " responsive";
+        } else {
+          x.className = "nav-page-links";
+        }
+      }
+    </script>
   </body>
 </html>

@@ -40,6 +40,13 @@ def get_project_files(project):
         for file in files:
             # we simply join them here to avoid concatenation in HTML file
             file_paths.append(os.path.join(project.files, file))
-            return file_paths
+        return file_paths
     else:
         return None
+
+def get_first_files(projects):
+    first_files = []
+    for project in projects:
+        files = get_project_files(project)
+        first_files.append(files[0])
+    return first_files

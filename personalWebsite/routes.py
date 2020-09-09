@@ -4,7 +4,7 @@ from PIL import Image
 from personalWebsite import app, db
 from personalWebsite.forms import PostForm
 from personalWebsite.models import Project, HomePost
-from personalWebsite.utils import save_file, save_project_files, get_project_files, set_type_image
+from personalWebsite.utils import save_file, save_project_files, get_project_files, set_type_image, get_first_files
 
 @app.route('/')
 @app.route('/home')
@@ -28,18 +28,23 @@ def project(project_id):
 
 @app.route('/coding', methods=['GET'])
 def coding():
-    posts = Project.query.filter_by(type='coding').order_by(Project.id.desc())
+    page = request.args.get('page', 1, type=int)
+    posts = Project.query.filter_by(type='coding').order_by(Project.id.desc()).paginate(page=page, per_page=10)
     return render_template('coding.html', posts=posts)
 
-@app.route('/writings')
+@app.route('/writings', methods=['GET'])
 def writings():
-    posts = Project.query.filter_by(type='writing').order_by(Project.id.desc())
+    page = request.args.get('page', 1, type=int)
+    posts = Project.query.filter_by(type='writing').order_by(Project.id.desc()).paginate(page=page, per_page=10)
     return render_template('writings.html', posts=posts)
 
-@app.route('/photography')
+@app.route('/photography', methods=['GET'])
 def photography():
+    page = request.args.get('page', 1, type=int)
     posts = Project.query.filter_by(type='photography').order_by(Project.id.desc())
-    return render_template('photography.html', posts=posts)
+    files = get_first_files(posts)
+    posts=posts.paginate(page=page, per_page=10)
+    return render_template('photography.html', posts=posts, files=files)
 
 
 
@@ -49,7 +54,7 @@ def addpost():
         form = PostForm()
         if form.validate_on_submit():
             project_post = Project(title=form.title.data, type=form.type.data, content=form.content.data)
-            if 'files' in request.files or 'file[]' in request.files: #if there are one or more in the post request...
+            if 'file' in request.files or 'files[]' in request.files: #if there are one or more in the post request...
                 # we assign the full path returned from save_project_files function to the Project db object
                 project_post.files = save_project_files(form)
             type_image = set_type_image(form.type.data)

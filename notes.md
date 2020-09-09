@@ -3,7 +3,7 @@
 ### General:
 - [ ] Change colors
 - [ ] Change Bootstrap Card Padding and Margins
-- [ ] Add a login for me to update and delete posts 
+- [ ] Add a login for me to update and delete posts
 - [X] Use em to make it easier to position things
   - switch percentages to em
 - [X] Scale page to when resizing browser (i.e. responsive page)
@@ -45,3 +45,6 @@
 - [Code](https://www.flaticon.com/authors/icongeek26)
 - [Writing](https://www.flaticon.com/authors/icongeek26)
 - [Photography](https://www.flaticon.com/authors/icongeek26)
+
+##Other citations:
+- [Text Truncate Techniques](https://codepen.io/srekoble/pen/EgmyxV)
