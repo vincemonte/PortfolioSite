@@ -19,6 +19,12 @@
         <div class="card-footer text-right">
           <small class="text-muted">Date posted: {{ post.date_posted.strftime('%m-%d-%Y') }}</small>
         </div>
+        {% if post.author == current_user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1"href="{{ url_for('update_post', proj_id=post.id) }}">Update Post</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+          </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}

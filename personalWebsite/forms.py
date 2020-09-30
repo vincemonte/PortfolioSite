@@ -12,3 +12,8 @@ class PostForm(FlaskForm):
     files = MultipleFileField('Files', validators=[FileAllowed(['jpg', 'png']), Optional()])
     type = SelectField('Project Type', validators=[DataRequired()],choices=[('coding', 'Coding'), ('writing', 'Writing'), ('photography','Photography')])
     submit = SubmitField('Post')
+
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = StringField('Password', validators=[DataRequired()])
+    submit = SubmitField('Login')

@@ -1,6 +1,9 @@
 import os
 from personalWebsite import app
+from flask import request
 from werkzeug.utils import secure_filename
+from urllib.parse import urlparse, urljoin
+
 def set_type_image(form_type_image):
     path = 'images/'
     if form_type_image == 'coding':
@@ -50,3 +53,9 @@ def get_first_files(projects):
         files = get_project_files(project)
         first_files.append(files[0])
     return first_files
+
+def is_safe_url(target):
+    ref_url = urlparse(request.host_url)
+    test_url = urlparse(urljoin(request.host_url, target))
+    return test_url.scheme in ('http', 'https') and \
+           ref_url.netloc == test_url.netloc

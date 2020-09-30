@@ -2,6 +2,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_dropzone import Dropzone
 from flask_uploads import UploadSet, configure_uploads, IMAGES
+from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
 import os
 
 app = Flask(__name__)
@@ -14,6 +16,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['UPLOAD_FOLDER'] = 'images/project_images'
 print(app.config['UPLOAD_FOLDER'])
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
 
 #avoiding circular imports!
 from personalWebsite import routes
