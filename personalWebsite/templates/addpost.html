@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {%block content%}
-<div class="content-section m-5 p-3 text-white-2">
+<div class="form-section content-section text-white-2">
   <!--Will post the information to the same route (hence empty string)-->
   <form method="POST" action="" enctype="multipart/form-data">
     <!--adding a csf token-->
     {{form.hidden_tag() }}
     <fieldset class = "form-group">
-      <legend class="border-bottom mb-4"> Add Post </legend>
+      <legend class="border-bottom mb-4"> {{title}} </legend>
 
 
       <div class="form-group">
@@ -80,6 +80,14 @@
         {% endif %}
       </div>
 
+      {% if update %}
+      <div class="form-group">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" name="del-images">
+          <label class="form-check-label" for="exampleCheck1">Delete Images</label>
+        </div>
+      </div>
+      {% endif %}
 
     </fieldset>
       <div class="form-group">

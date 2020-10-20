@@ -5,7 +5,7 @@ from PIL import Image
 from personalWebsite import app, db, bcrypt
 from personalWebsite.forms import PostForm, LoginForm
 from personalWebsite.models import User, Project, HomePost
-from personalWebsite.utils import save_file, save_project_files, get_project_files, set_type_image, get_first_files, is_safe_url
+from personalWebsite.utils import save_file, save_project_files, get_project_files, set_type_image, get_first_files, is_safe_url, delete_project_files
 
 @app.route('/')
 @app.route('/home')
@@ -56,8 +56,11 @@ def addpost():
         form = PostForm()
         if form.validate_on_submit():
             project_post = Project(title=form.title.data, type=form.type.data, content=form.content.data, author=current_user)
-            if 'file' in request.files or 'files[]' in request.files: #if there are one or more in the post request...
-                # we assign the full path returned from save_project_files function to the Project db object
+            #interesting note: the request processes there to be data in the multiple file field and therefore it isn't as simple as checking the
+            # data from request; rather, we can check if there is no filename associated with the MultipleFileField
+            upload = request.files['files']
+            if upload.filename != '':
+
                 project_post.files = save_project_files(form)
             type_image = set_type_image(form.type.data)
             home_post = HomePost(type_image=type_image, content=form.synopsis.data, project=project_post)
@@ -82,9 +85,13 @@ def update_post(proj_id):
         project_post.title = form.title.data
         project_post.type = form.type.data
         project_post.content = form.content.data
-        #We must implement a way to delete the previous image directory
-        if 'file' in request.files or 'files[]' in request.files:
+        upload = request.files['files']
+        if upload.filename != '':
+            delete_project_files(project_post)
             project_post.files = save_project_files(form)
+        if request.form.get('del-images'):
+            delete_project_files(project_post)
+            project_post.files = None
         home_post.type_image = set_type_image(form.type.data)
         home_post.content = form.synopsis.data
         db.session.commit()
@@ -95,9 +102,7 @@ def update_post(proj_id):
         form.synopsis.data = home_post.content
         form.type.data = project_post.type
         form.content.data = project_post.content
-        form.files.data = project_post.files
-        form.type.data = project_post.type
-    return render_template('addpost.html', title="Update Post", form=form, legend='Update Post')
+    return render_template('addpost.html', title="Update Post", form=form, legend='Update Post', update=True)
 
 @app.route('/post/<int:proj_id>/delete', methods=['POST'])
 @login_required

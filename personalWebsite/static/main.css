@@ -4,67 +4,60 @@ I set the entire pages margin to 0px so the navbar would stretch all the way to 
 
 body{
   margin: 0;
-  background-image: url(images/GrayWallBackground.jpg);
   background-position: top;
   width: 100%;
+  background-image: url(images/GrayWallBackground.jpg);
 }
 
 main{
-  padding-top: 2.5em;
   font-family: 'Work Sans', sans-serif;
-
 }
 
+img{max-width: 100%;}
 
 .page-header{
-  padding-top: .2em;
-  margin-top: .4em;
+  padding-top: 2em;
 }
 
 .navbar {
-  overflow: hidden;
-  background-color: #27506E;
   font-family: 'Roboto Mono', monospace;
   position: fixed;
-  z-index: 1;
   width: 100%;
+  transition: .8s;
 }
-.logo {
-  float: left;
-  display: block;
-  padding-top: .3em;
-  height: 44px;
-  width: 44px;
-}
-
-.nav-page-links{
-  position: absolute;
-  left: 4em;
+.navbar-logo {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  transition: .8s;
 }
 
-.nav-page-links a{
-  float: left;
-  display: block;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  padding: .8em 1em;
-  font-size: 17px;
+.nav-authors-name{
+  font-size: 30px;
+  padding-left: .8em;
+  color: white !important;
+  transition: .8s;
+  text-shadow: .8px .6px #000000;
 }
 
-.nav-page-links a:hover{
-  background-color: #194D6A;
+.navbar-collapse{
+  padding-left: .5em;
 }
 
-.navbar .nav-toggle {
-  display: none;
+.navbar li{
+  padding: .1em .8em;
 }
 
-.nav-image-links a{
-  float: right;
-  padding-right: .75em;
-
+.navbar ul{
+  transition: .8s;
+  font-size: 21px;
 }
+
+.nav-link{
+  color: white !important;
+  text-shadow: 1px 1px #000000;
+}
+
 
 .jumbotron{
   background-image: url(images/cyberforce.jpg);
@@ -74,11 +67,13 @@ main{
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
   font-family: 'Crimson Text', serif;
+  padding: 12em 5em;
 }
 
 .jumbotron .container{
-  background-color: rgba(20, 20, 21, 0.8);
-  padding: .8em;
+  background-color: rgba(20, 20, 21, 0.75);
+  padding: 1em;
+  border-radius: 2em;
 }
 
 .home-articles .row{
@@ -100,10 +95,13 @@ main{
 .row .card{
   border-style: none;
   background-color: #DCDCDC;
+  border-radius: .9em;
 }
 
 .row .card-header{
   background-color: #4C7695;
+  border-top-left-radius: .2em;
+  border-top-right-radius: .2em;
 }
 
 .card-title{
@@ -114,6 +112,11 @@ main{
   text-align: left;
   font-family: 'Roboto Mono', monospace;
 }
+
+.container .type-project-posts{
+  padding-top: 3em;
+}
+
 
 .post-photo{
   object-fit: cover;
@@ -142,6 +145,12 @@ main{
 
 .text-white-2{
   color: #E7E9EE;
+}
+
+.form-section{
+  padding-top: 7em;
+  padding-left: 6em;
+  padding-right: 6em;
 }
 
 

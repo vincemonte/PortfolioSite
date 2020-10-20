@@ -1,4 +1,4 @@
-import os
+import os, shutil
 from personalWebsite import app
 from flask import request
 from werkzeug.utils import secure_filename
@@ -48,11 +48,23 @@ def get_project_files(project):
         return None
 
 def get_first_files(projects):
-    first_files = []
-    for project in projects:
-        files = get_project_files(project)
-        first_files.append(files[0])
-    return first_files
+    try:
+        first_files = []
+        for project in projects:
+            files = get_project_files(project)
+            first_files.append(files[0])
+        return first_files
+    except TypeError:
+        return None
+
+def delete_project_files(project):
+    if project.files:
+        full_dir_path = os.path.join(app.root_path, 'static', project.files)
+        try:
+            shutil.rmtree(full_dir_path)
+        except OSError as e:
+            print("Error: %s:%s" %(full_dir_path, e.strerror))
+            return None
 
 def is_safe_url(target):
     ref_url = urlparse(request.host_url)

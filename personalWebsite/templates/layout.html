@@ -16,28 +16,39 @@
 
   <body>
     <header>
-      <nav class="navbar">
-          <img class="logo" src="{{url_for('static', filename='images/VLMLogoWhite.svg')}}">
-          <div class="nav-page-links" id="page-links">
-            <a href="{{ url_for('homepage') }}">Home</a>
-            <a href="{{ url_for('coding') }}">Coding</a>
-            <a href="{{ url_for('writings') }}">Writings</a>
-            <a href="{{ url_for('photography') }}">Photography</a>
-            <a href="{{ url_for('about') }}">About</a>
-            <!-- Remember to change this to PC on local network once deployed -->
+
+      <nav class="navbar navbar-expand-sm navbar-dark" id="navigation-bar">
+        <img class="navbar-logo" id="navbar-logo" src="{{url_for('static', filename='images/VLMLogoWhite.svg')}}" alt="restaurant logo (rooster)">
+        <span class="nav-authors-name" id="nav-restaurant-name">Vincent Monteleone</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsing-navbar" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsing-navbar">
+          <ul class="navbar-nav ml-auto" id="nav-list-container">
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('homepage')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('coding')}}">Coding Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('writings')}}">Writings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('photography')}}">Photography</a>
+            </li>
             {% if current_user.is_authenticated %}
-            <a href="{{ url_for('addpost') }}">Add Post</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-            {%endif%}
-            <a href="javascript:void(0);" class="nav-toggle" onclick="dropBar()">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div>
-          <div class="nav-image-links">
-              <a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a>
-
-
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('addpost')}}">Add Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </nav>
+
     </header>
     <main role="main">
       {%with messages = get_flashed_messages(with_categories=true) %}
@@ -56,15 +67,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script>
-      function dropBar() {
-        var x = document.getElementById("page-links");
-        if (x.className === "nav-page-links") {
-          x.className += " responsive";
-        } else {
-          x.className = "nav-page-links";
-        }
-      }
-    </script>
+    <script src="{{url_for('static', filename='pageUtils.js')}}"></script>
   </body>
 </html>

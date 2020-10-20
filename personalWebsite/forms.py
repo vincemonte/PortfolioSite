@@ -9,11 +9,13 @@ class PostForm(FlaskForm):
     synopsis = TextAreaField('Synopsis', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[Optional()])
     #possibly add other file extension types
-    files = MultipleFileField('Files', validators=[FileAllowed(['jpg', 'png']), Optional()])
+    files= MultipleFileField('Files', validators=[FileAllowed(['jpg', 'png'])])
     type = SelectField('Project Type', validators=[DataRequired()],choices=[('coding', 'Coding'), ('writing', 'Writing'), ('photography','Photography')])
     submit = SubmitField('Post')
 
+
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
-    password = StringField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
