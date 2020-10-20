@@ -8,7 +8,7 @@
     <div class="col-lg-9">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <a class = "card-title" href="{{ url_for('project', project_id=post.id) }}">{{ post.title }}</a>
+          <a class = "card-title" href="{{ url_for('project', title=post.title) }}">{{ post.title }}</a>
         </div>
         {% if post.content %}
         <div class="card-body">

@@ -15,6 +15,7 @@ def set_type_image(form_type_image):
     path += fname
     return path
 
+
 def save_file(form_file, proj_dir_path):
     fn = secure_filename(form_file.filename)
     file_path = os.path.join(proj_dir_path, fn)
@@ -23,7 +24,7 @@ def save_file(form_file, proj_dir_path):
 
 def save_project_files(form):
     #create the relative path to make directory
-    rel_dir_path = os.path.join(app.config['UPLOAD_FOLDER'], form.title.data.strip().replace(" ", ""))
+    rel_dir_path = os.path.join(app.config['UPLOAD_FOLDER'], clean_title(form.title.data))
     full_dir_path = os.path.join(app.root_path, 'static', rel_dir_path)
     os.mkdir(full_dir_path)
     for file in form.files.data:

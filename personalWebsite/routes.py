@@ -20,9 +20,9 @@ def about():
     return render_template('about.html')
 
 #Eventually each project will need its own type of route
-@app.route('/project/<int:project_id>')
-def project(project_id):
-    project_post = Project.query.get_or_404(project_id)
+@app.route('/project/<title>')
+def project(title):
+    project_post = Project.query.filter_by(title=title).first()
     #still assigning files as so and potentially returning None makes this easier on the Jinga templating
     files = get_project_files(project_post)
     return render_template('project.html', project_post=project_post, files=files)
@@ -111,6 +111,7 @@ def delete_post(proj_id):
     home_post = HomePost.query.filter_by(project_id=proj_id).first()
     if project_post.author != current_user:
         abort(403)
+    delete_project_files(project_post)
     db.session.delete(project_post)
     db.session.delete(home_post)
     db.session.commit()
