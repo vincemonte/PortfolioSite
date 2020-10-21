@@ -96,7 +96,7 @@ def update_post(proj_id):
         home_post.content = form.synopsis.data
         db.session.commit()
         flash('Your post has been updated.', 'success')
-        return redirect(url_for('project', project_id=project_post.id))
+        return redirect(url_for('project', title=project_post.title))
     elif request.method == 'GET':
         form.title.data = project_post.title #filling in the form with the current data
         form.synopsis.data = home_post.content

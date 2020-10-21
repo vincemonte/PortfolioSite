@@ -11,15 +11,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='devices.css')}}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico')}}" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
     <title>Vincent Monteleone's Current Workflow: coding and personal-writing projects!</title>
   </head>
 
   <body>
     <header>
 
-      <nav class="navbar navbar-expand-sm navbar-dark" id="navigation-bar">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
         <img class="navbar-logo" id="navbar-logo" src="{{url_for('static', filename='images/VLM_Logo_v2.png')}}" alt="restaurant logo (rooster)">
-        <span class="nav-authors-name" id="nav-restaurant-name">Vincent Monteleone</span>
+        <span class="navbar-brand">Vincent Monteleone</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsing-navbar" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -67,6 +68,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="{{url_for('static', filename='pageUtils.js')}}"></script>
+    <!--<script src="{{url_for('static', filename='pageUtils.js')}}"></script>-->
   </body>
 </html>

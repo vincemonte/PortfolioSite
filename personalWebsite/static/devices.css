@@ -11,21 +11,39 @@ Handles phones
 
     .navbar-toggler{
       position: absolute;
-      right: 0;
-      top: 0;
+      top: 10%;
+      right: 2%;
     }
 
+
+    .navbar-collapse{
+      padding: .5em;
+      background-color: rgba(20, 20, 21, 0.99);
+      max-width: 78%;
+      margin-left: 7%;
+      border-radius: .4em;
+    }
+
+    .navbar-collapse .nav-item{
+      border-bottom: 1px solid;
+      padding-left: 0;
+    }
     .navbar-logo{
       width: 48px;
       height: 48px;
     }
 
-    .nav-authors-name{
-      font-size: 25px;
-      margin-left: 3%;
+    .navbar-brand{
+      font-size: 24px;
+      margin-left: 2%;
       margin-right: auto;
       padding: 0;
     }
+
+    .jumbotron{
+      padding: 6em 2em;
+    }
+
 
     .focused-text p{
         font-size: 1em;

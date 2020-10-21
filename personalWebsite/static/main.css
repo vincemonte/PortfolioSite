@@ -15,6 +15,7 @@ main{
 
 img{max-width: 100%;}
 
+
 .page-header{
   padding-top: 2em;
 }
@@ -29,21 +30,18 @@ img{max-width: 100%;}
   width: 65px;
   height: 65px;
   margin: 0;
-  transition: .8s;
 }
 
-.nav-authors-name{
-  font-size: 40px;
+.navbar-brand{
+  font-size: 1.8em;
   font-weight: 500;
   padding-left: .8em;
-  color: white !important;
-  transition: .8s;
-  text-shadow: .8px .6px #000000;
+  color: #F0FFFF !important;
+  -webkit-text-stroke: .4px #282828;
+  text-shadow: 1px 1.5px 1.5px #282828;
 }
 
-.navbar-collapse{
-  padding-left: .5em;
-}
+
 
 .navbar li{
   padding: .1em .8em;
@@ -68,7 +66,7 @@ img{max-width: 100%;}
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
   font-family: 'Crimson Text', serif;
-  padding: 12em 5em;
+  padding: 9em 5em;
 }
 
 .jumbotron .container{
@@ -78,14 +76,14 @@ img{max-width: 100%;}
 }
 
 .home-articles .row{
+  display: flex;
   max-width: 80%;
-  margin-left: 10%;
-  margin-right: auto;
+  margin-right:10%;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.col-md-6{
-  padding: 0 4em 0 4em;
-}
 
 .col-lg-9{
     max-width: 80%;
@@ -95,23 +93,29 @@ img{max-width: 100%;}
 
 .row .card{
   border-style: none;
-  background-color: #DCDCDC;
-  border-radius: .9em;
+  background: #FFEEEE;
 }
 
 .row .card-header{
-  background-color: #4C7695;
-  border-top-left-radius: .2em;
-  border-top-right-radius: .2em;
+    background: #0f2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card-title{
   text-decoration: none;
-  color: #FAF4EE;
-  font-size: 1.3em;
+  color: #F0FFFF;
+  font-size: 1.43em;
   font-weight: 500;
   text-align: left;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.card-footer{
+  padding: .3em;
 }
 
 .container .type-project-posts{
@@ -127,6 +131,9 @@ img{max-width: 100%;}
   display: block;
   float: left;
   padding-left: .25em;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
 }
 
 .ellipsis-text{
@@ -154,7 +161,36 @@ img{max-width: 100%;}
   padding-right: 6em;
 }
 
+.carousel-inner{
+  border-radius: .85em;
+  background-color: rgba(20, 20, 21, 0.75);
+}
 
+.carousel-item img{
+  height: 60vh;
+}
+
+.carousel-control{
+  background-color: rgba(88, 88, 88, 0.8);
+  max-width: 5%;
+  height: 26%;
+  top: 35%;
+
+}
+
+.carousel-control-prev{
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.carousel-control-next{
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.carousel-indicators{
+  bottom: -1.7em;
+}
 
 ::-webkit-scrollbar {
   width: 10px;

@@ -7,11 +7,11 @@ from urllib.parse import urlparse, urljoin
 def set_type_image(form_type_image):
     path = 'images/'
     if form_type_image == 'coding':
-        fname = 'coding_project_type.png'
+        fname = 'coding_project_type.svg'
     elif form_type_image == 'writing':
-        fname = 'writing_project_type.png'
+        fname = 'writing_project_type.svg'
     else:
-        fname = 'photography_project_type.png'
+        fname = 'photography_project_type.svg'
     path += fname
     return path
 
@@ -24,7 +24,7 @@ def save_file(form_file, proj_dir_path):
 
 def save_project_files(form):
     #create the relative path to make directory
-    rel_dir_path = os.path.join(app.config['UPLOAD_FOLDER'], clean_title(form.title.data))
+    rel_dir_path = os.path.join(app.config['UPLOAD_FOLDER'], form.title.data.strip().replace(" ", "_"))
     full_dir_path = os.path.join(app.root_path, 'static', rel_dir_path)
     os.mkdir(full_dir_path)
     for file in form.files.data:
