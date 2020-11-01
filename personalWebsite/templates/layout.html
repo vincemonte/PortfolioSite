@@ -30,13 +30,16 @@
               <a class="nav-link" href="{{url_for('homepage')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('coding')}}">Coding Projects</a>
+              <a class="nav-link" href="{{url_for('coding')}}">Coding</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('writings')}}">Writings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('photography')}}">Photography</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('about')}}">About</a>
             </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
@@ -46,6 +49,9 @@
               <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
             </li>
             {% endif %}
+            <li class="nav-item">
+              <a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a>
+            </li>
           </ul>
         </div>
       </nav>

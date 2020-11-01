@@ -27,19 +27,19 @@ def project(title):
     files = get_project_files(project_post)
     return render_template('project.html', project_post=project_post, files=files)
 
-@app.route('/coding', methods=['GET'])
+@app.route('/coding')
 def coding():
     page = request.args.get('page', 1, type=int)
     posts = Project.query.filter_by(type='coding').order_by(Project.id.desc()).paginate(page=page, per_page=10)
     return render_template('coding.html', posts=posts)
 
-@app.route('/writings', methods=['GET'])
+@app.route('/writings')
 def writings():
     page = request.args.get('page', 1, type=int)
     posts = Project.query.filter_by(type='writing').order_by(Project.id.desc()).paginate(page=page, per_page=10)
     return render_template('writings.html', posts=posts)
 
-@app.route('/photography', methods=['GET'])
+@app.route('/photography')
 def photography():
     page = request.args.get('page', 1, type=int)
     posts = Project.query.filter_by(type='photography').order_by(Project.id.desc())

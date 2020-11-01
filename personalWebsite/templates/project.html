@@ -1,17 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="container text-white-2">
+  <div class="container project-post">
     <h1 class="display-4 page-header">{{ project_post.title }}</h1>
     <small class="text-muted">{{project_post.date_posted.strftime('%m-%d-%Y')}}</small>
     <hr class="my-3">
-     <section class="text-left focused-text">
-       <p class="lead">{{ project_post.content }}</p>
-     </section>
+    {%if project_post.content %}
+     <div class="text-left focused-text">
+       <pre>{{ project_post.content }}</pre>
+     </div>
+     {%endif%}
      {% if project_post.files %}
 
       <!--If there is only one image to load we won't enter the carousel-->
        {% if files|length == 1 %}
+       <div class="text-center">
         <img src="{{url_for('static', filename=files[0])}}">
+      </div>
        {% else %}
         <h3><i>Pictures from the Project</i></h3>
         <hr class="my-2">

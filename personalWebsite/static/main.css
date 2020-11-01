@@ -18,6 +18,7 @@ img{max-width: 100%;}
 
 .page-header{
   padding-top: 2em;
+  color: #DDDDDD;
 }
 
 .navbar {
@@ -54,8 +55,23 @@ img{max-width: 100%;}
 
 .nav-link{
   color: white !important;
-  text-shadow: 1px 1px #000000;
+  transition-delay: font-weight .3s;
+  transition: width .3s ease-out, font-size .3s ease-out, font-weight step-start;
 }
+
+.nav-link:hover{
+  width: 115%;
+  font-size: 115%;
+  font-weight: 600;
+  -webkit-text-stroke: .7px black;
+}
+
+.nav-item img{
+  width: 32px;
+  height: 32px;
+  float: right;
+}
+
 
 
 .jumbotron{
@@ -93,7 +109,7 @@ img{max-width: 100%;}
 
 .row .card{
   border-style: none;
-  background: #FFEEEE;
+  background: #C0C0C0;
 }
 
 .row .card-header{
@@ -108,7 +124,7 @@ img{max-width: 100%;}
   font-size: 1.43em;
   font-weight: 500;
   text-align: left;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Crimson Text', serif;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);
@@ -143,12 +159,26 @@ img{max-width: 100%;}
   -webkit-box-orient: vertical;
 }
 
-.focused-text{
-  margin-bottom: 4em;
+.project-post{
+  margin-bottom: 1.5em;
 }
 
-.focused-text p{
+.focused-text{
+  margin-bottom: 4em;
+  background-color: rgba(112, 128, 144, 0.3);
+  max-width: 80%;
+  border-top-left-radius: 1em;
+  border-top-right-radius: .3em;
+  border-bottom-left-radius: .3em;
+  border-bottom-right-radius: 1em;
+}
+
+.focused-text pre{
   text-indent: 2em;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 17px;
+  padding: 1em;
+  color: #EEEEEE;
 }
 
 .text-white-2{
@@ -159,6 +189,10 @@ img{max-width: 100%;}
   padding-top: 7em;
   padding-left: 6em;
   padding-right: 6em;
+}
+
+#form-content{
+  height: 600px;
 }
 
 .carousel-inner{
