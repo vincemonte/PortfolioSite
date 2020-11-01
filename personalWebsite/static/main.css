@@ -8,7 +8,7 @@ body{
   background-size: cover;
   width: 100%;
   background-image: url(images/GrayWallBackground.jpg);
-
+  transition: 4s ease;
 }
 
 main{
@@ -26,12 +26,14 @@ img{max-width: 100%;}
   font-family: 'Roboto Mono', monospace;
   position: fixed;
   width: 100%;
-  transition: .8s;
+  padding: .5em;
+  transition: 1s ease-in;
 }
 .navbar-logo {
   width: 65px;
   height: 65px;
   margin: 0;
+  transition: 1.65s ease;
 }
 
 .navbar-brand{
@@ -41,6 +43,7 @@ img{max-width: 100%;}
   color: #F0FFFF !important;
   -webkit-text-stroke: .4px #282828;
   text-shadow: 1px 1.5px 1.5px #282828;
+  transition: 1.65s ease;
 }
 
 
@@ -50,7 +53,7 @@ img{max-width: 100%;}
 }
 
 .navbar ul{
-  transition: .8s;
+  transition: 1.01s ease;
   font-size: 21px;
 }
 
@@ -88,8 +91,11 @@ img{max-width: 100%;}
 
 .jumbotron .container{
   background-color: rgba(20, 20, 21, 0.75);
-  padding: 1em;
+  padding: 1.6em;
   border-radius: 2em;
+  max-width: 60%;
+  margin-left: 10%;
+  margin-right: auto;
 }
 
 .home-articles .row{
