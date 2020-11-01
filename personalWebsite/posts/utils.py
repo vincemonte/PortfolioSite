@@ -1,8 +1,6 @@
 import os, shutil
-from personalWebsite import app
-from flask import request
+from flask import request, current_app
 from werkzeug.utils import secure_filename
-from urllib.parse import urlparse, urljoin
 
 def set_type_image(form_type_image):
     path = 'images/'
@@ -24,8 +22,8 @@ def save_file(form_file, proj_dir_path):
 
 def save_project_files(form):
     #create the relative path to make directory
-    rel_dir_path = os.path.join(app.config['UPLOAD_FOLDER'], form.title.data.strip().replace(" ", "_"))
-    full_dir_path = os.path.join(app.root_path, 'static', rel_dir_path)
+    rel_dir_path = os.path.join(current_app.config['UPLOAD_FOLDER'], form.title.data.strip().replace(" ", "_"))
+    full_dir_path = os.path.join(current_app.root_path, 'static', rel_dir_path)
     os.mkdir(full_dir_path)
     for file in form.files.data:
         save_file(file, full_dir_path)
@@ -38,7 +36,7 @@ Return type: list
 def get_project_files(project):
     #we should only attempt to load image files if they exist
     if project.files:
-        full_dir_path = os.path.join(app.root_path, 'static', project.files)
+        full_dir_path = os.path.join(current_app.root_path, 'static', project.files)
         files = os.listdir(full_dir_path)
         file_paths = []
         for file in files:
@@ -60,15 +58,9 @@ def get_first_files(projects):
 
 def delete_project_files(project):
     if project.files:
-        full_dir_path = os.path.join(app.root_path, 'static', project.files)
+        full_dir_path = os.path.join(current_app.root_path, 'static', project.files)
         try:
             shutil.rmtree(full_dir_path)
         except OSError as e:
             print("Error: %s:%s" %(full_dir_path, e.strerror))
             return None
-
-def is_safe_url(target):
-    ref_url = urlparse(request.host_url)
-    test_url = urlparse(urljoin(request.host_url, target))
-    return test_url.scheme in ('http', 'https') and \
-           ref_url.netloc == test_url.netloc

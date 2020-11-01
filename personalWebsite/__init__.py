@@ -1,25 +1,34 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_dropzone import Dropzone
-from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-import os
-
-app = Flask(__name__)
+from personalWebsite.config import Config
 
 
-#setting the secret key
-app.config['SECRET_KEY'] = '0612a219fbdcbb353bc09de164bee2ee'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-#defining the upload folder path for easy file saving and loading
-app.config['UPLOAD_FOLDER'] = os.path.join('images', 'project_images')
-print(app.config['UPLOAD_FOLDER'])
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+db = SQLAlchemy()
+
+bcrypt = Bcrypt()
+
+login_manager = LoginManager()
+login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
 
-#avoiding circular imports!
-from personalWebsite import routes
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    db.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+
+    #avoiding circular imports; we've now implented blueprints
+    from personalWebsite.main.routes import main
+    from personalWebsite.posts.routes import posts
+    from personalWebsite.users.routes import users
+    from personalWebsite.errors.handlers import errors
+    app.register_blueprint(main)
+    app.register_blueprint(posts)
+    app.register_blueprint(users)
+    app.register_blueprint(errors)
+
+    return app

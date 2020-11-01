@@ -1,5 +1,6 @@
-#This app variable must exist within __init__.py inside the package
-from personalWebsite import app
-#Starting the server inside our code!
+from personalWebsite import create_app
+
+app = create_app()
+
 if __name__  == '__main__':
     app.run(debug=True, host='0.0.0.0')

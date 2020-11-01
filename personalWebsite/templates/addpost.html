@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {%block content%}
-<div class="form-section content-section text-white-2">
+<div class="form-section post-section text-white-2">
   <!--Will post the information to the same route (hence empty string)-->
   <form method="POST" action="" enctype="multipart/form-data">
     <!--adding a csf token-->
@@ -48,7 +48,7 @@
                {% endfor %}
           </div>
         {% else %}
-          {{ form.content(class="form-control form-control-lg")}}
+          {{ form.content(class="form-control form-control-lg", id="form-content")}}
         {% endif %}
       </div>
 
