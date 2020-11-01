@@ -5,8 +5,10 @@ I set the entire pages margin to 0px so the navbar would stretch all the way to 
 body{
   margin: 0;
   background-position: top;
+  background-size: cover;
   width: 100%;
   background-image: url(images/GrayWallBackground.jpg);
+
 }
 
 main{
@@ -17,7 +19,6 @@ img{max-width: 100%;}
 
 
 .page-header{
-  padding-top: 2em;
   color: #DDDDDD;
 }
 
@@ -141,6 +142,13 @@ img{max-width: 100%;}
 
 .post-photo{
   object-fit: cover;
+  height: 20vh;
+}
+
+.image-backdrop{
+  background-color: rgba(20, 20, 21, 0.75);
+  padding: 1em 2em;
+  border-radius: .3em;
 }
 
 .project_type_image{
@@ -163,9 +171,12 @@ img{max-width: 100%;}
   margin-bottom: 1.5em;
 }
 
+.post-section{
+  margin-top: 6.2em;
+}
+
 .focused-text{
-  margin-bottom: 4em;
-  background-color: rgba(112, 128, 144, 0.3);
+  background-color: rgba(112, 128, 144, 0.2);
   max-width: 80%;
   border-top-left-radius: 1em;
   border-top-right-radius: .3em;
@@ -173,11 +184,12 @@ img{max-width: 100%;}
   border-bottom-right-radius: 1em;
 }
 
-.focused-text pre{
-  text-indent: 2em;
+.focused-text p{
+  display: block;
+  white-space:pre-wrap;
   font-family: 'Work Sans', sans-serif;
   font-size: 17px;
-  padding: 1em;
+  padding: 1.4em;
   color: #EEEEEE;
 }
 
@@ -224,6 +236,10 @@ img{max-width: 100%;}
 
 .carousel-indicators{
   bottom: -1.7em;
+}
+
+.alert, .alert-success{
+  margin-top: 1.5em;
 }
 
 ::-webkit-scrollbar {

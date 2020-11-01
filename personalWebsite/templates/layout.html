@@ -27,26 +27,26 @@
         <div class="collapse navbar-collapse" id="collapsing-navbar">
           <ul class="navbar-nav ml-auto" id="nav-list-container">
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('homepage')}}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url_for('main.home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('coding')}}">Coding</a>
+              <a class="nav-link" href="{{url_for('posts.coding')}}">Coding</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('writings')}}">Writings</a>
+              <a class="nav-link" href="{{url_for('posts.writings')}}">Writings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('photography')}}">Photography</a>
+              <a class="nav-link" href="{{url_for('posts.photography')}}">Photography</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('about')}}">About</a>
+              <a class="nav-link" href="{{url_for('main.about')}}">About</a>
             </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('addpost')}}">Add Post</a>
+              <a class="nav-link" href="{{url_for('posts.addpost')}}">Add Post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+              <a class="nav-link" href="{{url_for('users.logout')}}">Logout</a>
             </li>
             {% endif %}
             <li class="nav-item">

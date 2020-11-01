@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, SelectField, MultipleFileField
+from wtforms import StringField, SubmitField, TextAreaField, SelectField, MultipleFileField
 from flask_wtf.file import FileField, FileAllowed
 from wtforms.validators import DataRequired, Optional
 
@@ -12,10 +12,3 @@ class PostForm(FlaskForm):
     files= MultipleFileField('Files', validators=[FileAllowed(['jpg', 'png'])])
     type = SelectField('Project Type', validators=[DataRequired()],choices=[('coding', 'Coding'), ('writing', 'Writing'), ('photography','Photography')])
     submit = SubmitField('Post')
-
-
-
-class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Login')
