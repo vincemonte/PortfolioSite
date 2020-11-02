@@ -29,6 +29,18 @@ img{max-width: 100%;}
   padding: .5em;
   transition: 1s ease-in;
 }
+#collapsing-navbar.navbar-collapse.collapse.show,
+#collapsing-navbar.navbar-collapse.collapsing  {
+  max-width: 60%;
+  margin-right: 20%;
+  margin-left: auto;
+  text-align: center;
+  background-color: rgba(35, 71, 98, 0.99);
+  border-radius: 1em;
+}
+
+
+
 .navbar-logo {
   width: 65px;
   height: 65px;
@@ -41,8 +53,8 @@ img{max-width: 100%;}
   font-weight: 500;
   padding-left: .8em;
   color: #F0FFFF !important;
-  -webkit-text-stroke: .4px #282828;
-  text-shadow: 1px 1.5px 1.5px #282828;
+  -webkit-text-stroke: .5px #282828;
+  text-shadow: 1px 1.5px 1.5px black;
   transition: 1.65s ease;
 }
 
@@ -64,7 +76,6 @@ img{max-width: 100%;}
 }
 
 .nav-link:hover{
-  width: 115%;
   font-size: 115%;
   font-weight: 500;
   -webkit-text-stroke: .3px silver;
@@ -92,7 +103,7 @@ img{max-width: 100%;}
   background-color: rgba(20, 20, 21, 0.75);
   padding: 1.6em;
   border-radius: 2em;
-  max-width: 60%;
+  max-width: 50%;
   margin-left: 10%;
   margin-right: auto;
 }
@@ -116,12 +127,15 @@ img{max-width: 100%;}
 .row .card{
   border-style: none;
   background: #C0C0C0;
+  border-radius: .6em;
 }
 
 .row .card-header{
     background: #0f2027; /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top-right-radius: .5em;
+    border-top-left-radius: .5em;
 }
 
 .card-title{
@@ -200,6 +214,9 @@ img{max-width: 100%;}
 
 .text-white-2{
   color: #E7E9EE;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .form-section{
@@ -265,6 +282,7 @@ img{max-width: 100%;}
 
 footer{
   position:fixed;
+  float: right;
   bottom: 10px;
-  padding-left: 10px;
+  right:10px;
 }
