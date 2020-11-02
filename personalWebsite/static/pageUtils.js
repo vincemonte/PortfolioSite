@@ -1,4 +1,15 @@
-window.addEventListener("scroll", resizeElementsOnScroll);
+function isMobile() {
+  var check = false;
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  check = true;
+  }
+  return check;
+};
+
+if( isMobile() == false ) {
+ window.addEventListener("scroll", resizeElementsOnScroll);
+}
+
 
 function resizeElementsOnScroll() {
   resizeNavBar();
@@ -12,6 +23,10 @@ function resizeNavBar(){
     var x = document.getElementById("navbar-logo");
     x.style.width = "40px";
     x.style.height = "40px";
+    x= document.getElementById("image-link");
+    x.style.width = "36px";
+    x.style.height = "36px";
+    x.style.paddingTop = "4px";
     document.getElementById("navbar-brand").style.fontSize="1.5em";
   }
   else{
@@ -20,6 +35,10 @@ function resizeNavBar(){
     var x = document.getElementById("navbar-logo");
     x.style.width = "65px";
     x.style.height = "65px";
+    x= document.getElementById("image-link");
+    x.style.width = "40px";
+    x.style.height = "40px";
+    x.style.paddingTop = "inherit";
     document.getElementById("navbar-brand").style.fontSize="1.8em";
   }
 }

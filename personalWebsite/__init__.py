@@ -10,7 +10,7 @@ db = SQLAlchemy()
 bcrypt = Bcrypt()
 
 login_manager = LoginManager()
-login_manager.login_view = 'users.login'
+login_manager.login_view = 'main.home'
 login_manager.login_message_category = 'info'
 
 def create_app(config_class=Config):

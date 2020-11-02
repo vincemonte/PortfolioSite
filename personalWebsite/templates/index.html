@@ -2,19 +2,24 @@
 {%block content%}
     <div class="jumbotron" id="home-jumbotron">
       <div class="container text-white" id="jumbotron-container">
-        <h1 class="display-4">My Current Workflow...</h1>
-        <p class="lead">Hi, my name is Vincent Monteleone and this is my portfolio site</p>
-        <hr class="my-4">
-        <p>Below are some of my most recent projects. This site is itself one of my projects, having to learn how to code in HTML and CSS.</p>
-        <a class="btn btn-info btn-lg" href="{{ url_for('main.about') }}"> Learn More</a>
+        <h1 class="display-4">See Everything I've Ever Done</h1>
+        <p class="lead">My name is Vincent Monteleone. I'm currently about to graduate from St. John's University, Majoring in Computer Science.
+        This website embodies the energy and pride of all my coding, writing, photography, and related art-works. The best part is this entire website is a project itself!
+        </p>
+        <h5><strong>Check out what I've been up to below!</strong></h5>
+        <div class="text-right">
+          <a class="btn btn-info btn-lg mr-4"href="{{ url_for('main.about') }}"> Learn More</a>
+        </div>
       </div>
     </div>
     <section class="home-articles">
-      <div class="container-fluid text-center">
-        <div class="row">
+      <div class="container-fluid text-left">
+        <h1 class="display-4 text-white-2" style="font-family: 'Roboto Mono', monospace;">Latest Projects:</h1>
+        <hr class="my-2">
+        <div class="row text-center ">
           {% for post in posts.items %}
           <div class="col-md-6" >
-            <div class="card mb-4 shadow-lg">
+            <div class="card mb-4 shadow-lg border-0">
               <div class="card-header">
                 <img  src="{{ url_for('static', filename=post.type_image ) }}" class="project_type_image">
                 <a class = "card-title" href="{{ url_for('posts.project', title=post.project.title) }}">{{ post.project.title }}</a>

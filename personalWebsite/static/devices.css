@@ -3,7 +3,7 @@ Handles phones
 */
 @media only screen
   and (min-device-width: 320px)
-  and (max-device-width: 812px){
+  and (max-device-width: 767px){
 
     main{
       font-size: .8em;
@@ -16,7 +16,8 @@ Handles phones
     }
 
 
-    .navbar-collapse{
+    #collapsing-navbar.navbar-collapse.collapse.show,
+    #collapsing-navbar.navbar-collapse.collapsing{
       padding: .5em;
       background-color: rgba(20, 20, 21, 0.99);
       max-width: 78%;
@@ -28,22 +29,53 @@ Handles phones
       border-bottom: 1px solid;
       padding-left: 0;
     }
+
     .navbar-logo{
       width: 48px;
       height: 48px;
     }
 
     .navbar-brand{
-      font-size: 24px;
+      font-size: 22px;
       margin-left: 2%;
       margin-right: auto;
       padding: 0;
     }
 
     .jumbotron{
-      padding: 6em 2em;
+      padding: 5em 0em;
     }
 
+    .jumbotron .container{
+      padding: 2em;
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: auto;
+    }
+
+    .jumbotron .lead{
+      font-size: 1.2em;
+    }
+
+    .display-4{
+      font-size: 2.4em;
+    }
+
+    .home-articles h1{
+      margin-left: 10%;
+
+    }
+
+    .home-articles .card-title{
+      padding-right: 1em;
+      padding-top: 1em;
+    }
+
+    .focused-text{
+      max-width: 90%;
+      margin-right: 10%;
+      margin-left: auto;
+    }
 
     .focused-text p{
         font-size: 1em;
@@ -60,3 +92,44 @@ Handles phones
     }
 
 }
+
+/*
+Handles tablets
+*/
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px){
+    main{
+      font-size: 1.2em;
+    }
+
+    .lead{
+      font-size: 24px;
+    }
+
+    .navbar-brand{
+      font-size: 45px;
+    }
+
+    .jumbotron{
+      padding: 6em 0em;
+    }
+
+    .home-articles .card-title{
+      padding-right: 1em;
+      padding-top: 1em;
+    }
+
+    .jumbotron .container{
+      padding: 2em;
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: auto;
+    }
+
+    .home-articles .row{
+      max-width: 90%;
+      margin-left: 5%;
+      margin-right: auto;
+    }
+  }

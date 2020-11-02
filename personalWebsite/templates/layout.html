@@ -18,10 +18,10 @@
   <body>
     <header>
 
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navigation-bar">
-        <img class="navbar-logo" id="navbar-logo" src="{{url_for('static', filename='images/VLM_Logo_v2.png')}}" alt="restaurant logo (rooster)">
+      <nav class="navbar fixed-top navbar-expand-xl navbar-dark" id="navigation-bar">
+        <a href="{{url_for('main.home')}}"><img class="navbar-logo" id="navbar-logo" src="{{url_for('static', filename='images/VLM_Logo_v2.png')}}" alt="restaurant logo (rooster)"></a>
         <span class="navbar-brand" id="navbar-brand">Vincent Monteleone</span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsing-navbar" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsing-navbar" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation" style="background:#1D2327;">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsing-navbar">
@@ -50,7 +50,7 @@
             </li>
             {% endif %}
             <li class="nav-item">
-              <a href="https://github.com/vincemonte"><img src="{{url_for('static', filename='images/GitHub-Mark-Light-32px.png')}}"></a>
+              <a href="https://github.com/vincemonte"><img class="image-link" id="image-link" src="{{url_for('static', filename='images/GitHub_White.svg')}}"></a>
             </li>
           </ul>
         </div>
