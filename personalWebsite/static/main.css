@@ -66,16 +66,15 @@ img{max-width: 100%;}
 .nav-link:hover{
   width: 115%;
   font-size: 115%;
-  font-weight: 600;
-  -webkit-text-stroke: .7px black;
+  font-weight: 500;
+  -webkit-text-stroke: .3px silver;
 }
 
-.nav-item img{
-  width: 32px;
-  height: 32px;
-  float: right;
+.image-link{
+  width: 40px;
+  height: 40px;
+  transition: 1.01s ease;
 }
-
 
 
 .jumbotron{

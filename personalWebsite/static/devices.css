@@ -41,9 +41,23 @@ Handles phones
     }
 
     .jumbotron{
-      padding: 6em 2em;
+      padding: 6em 0em;
     }
 
+    .jumbotron .container{
+      padding: 2em;
+      max-width: 80%;
+      margin-left: 10%;
+      margin-right: auto;
+    }
+
+    .jumbotron .lead{
+      font-size: 1.4em;
+    }
+
+    .display-4{
+      font-size: 2.4em;
+    }
 
     .focused-text p{
         font-size: 1em;

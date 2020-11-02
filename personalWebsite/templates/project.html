@@ -15,8 +15,8 @@
          <h3 class="text-white"><i>Picture from the Project:</i></h3>
          <hr class="my-2">
         {% endif %}
-       <div class="text-center image-backdrop">
-        <img src="{{url_for('static', filename=files[0])}}">
+       <div class="text-center">
+        <img class="image-backdrop" src="{{url_for('static', filename=files[0])}}">
       </div>
        {% else %}
         <h3 class="text-white"><i>Pictures from the Project:</i></h3>
