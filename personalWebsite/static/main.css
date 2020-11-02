@@ -96,14 +96,14 @@ img{max-width: 100%;}
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
   font-family: 'Crimson Text', serif;
-  padding: 9em 5em;
+  padding: 7em 5em;
 }
 
 .jumbotron .container{
   background-color: rgba(20, 20, 21, 0.75);
   padding: 1.6em;
   border-radius: 2em;
-  max-width: 50%;
+  max-width: 60%;
   margin-left: 10%;
   margin-right: auto;
 }
@@ -231,7 +231,7 @@ img{max-width: 100%;}
 }
 
 #form-content{
-  height: 600px;
+  height: 450px;
 }
 
 .carousel-inner{
@@ -265,8 +265,10 @@ img{max-width: 100%;}
   bottom: -1.7em;
 }
 
-.alert, .alert-success{
-  margin-top: 1.5em;
+.alert.alert-info, .alert.alert-success{
+  position: absolute;
+  top: 60px;
+  left: 40%;
 }
 
 ::-webkit-scrollbar {
