@@ -25,7 +25,7 @@
                 <a class = "card-title" href="{{ url_for('posts.project', title=post.project.title) }}">{{ post.project.title }}</a>
               </div>
               <div class="card-body">
-                <p class= "card-text"> {{ post.content }} </p>
+                <p class= "card-text ellipsis-text "> {{ post.content }} </p>
               </div>
               <div class="card-footer text-right">
                 <small class="text-muted">Date posted: {{ post.project.date_posted.strftime('%m-%d-%Y') }}</small>

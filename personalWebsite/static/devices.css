@@ -19,15 +19,9 @@ Handles phones
     #collapsing-navbar.navbar-collapse.collapse.show,
     #collapsing-navbar.navbar-collapse.collapsing{
       padding: .5em;
-      background-color: rgba(20, 20, 21, 0.99);
       max-width: 78%;
       margin-left: 7%;
       border-radius: .4em;
-    }
-
-    .navbar-collapse .nav-item{
-      border-bottom: 1px solid;
-      padding-left: 0;
     }
 
     .navbar-logo{
@@ -37,7 +31,7 @@ Handles phones
 
     .navbar-brand{
       font-size: 22px;
-      margin-left: 2%;
+      margin-left: 3%;
       margin-right: auto;
       padding: 0;
     }
@@ -53,13 +47,24 @@ Handles phones
       margin-right: auto;
     }
 
+    .jumbotron .display-4{
+      font-size: 1.6em;
+    }
+
     .jumbotron .lead{
       font-size: 1.2em;
     }
 
-    .display-4{
+    .display-5{
       font-size: 2.4em;
+      padding-left: 8%;
     }
+    
+    .home-articles .display-4{
+      font-size: 2.7em;
+      text-align: center;
+      margin: 0;
+    } 
 
     .home-articles h1{
       margin-left: 10%;
@@ -73,7 +78,7 @@ Handles phones
 
     .focused-text{
       max-width: 90%;
-      margin-right: 10%;
+      margin-right: 5%;
       margin-left: auto;
     }
 
@@ -85,6 +90,10 @@ Handles phones
       max-width: 90%;
       margin-left: 5%;
       margin-right: auto;
+    }
+
+    .home-articles .card-body{
+      min-height: 9vh;
     }
 
     .col-md-6{
@@ -120,6 +129,11 @@ Handles tablets
       padding-top: 1em;
     }
 
+    .focused-text{
+      max-width: 90%;
+      margin-right: 10%;
+    }
+
     .jumbotron .container{
       padding: 2em;
       max-width: 80%;
@@ -131,5 +145,9 @@ Handles tablets
       max-width: 90%;
       margin-left: 5%;
       margin-right: auto;
+    }
+
+    .home-articles .card-body{
+      min-height: 8vh;
     }
   }

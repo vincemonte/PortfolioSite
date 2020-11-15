@@ -155,6 +155,10 @@ img{max-width: 100%;}
                0px 18px 23px rgba(0,0,0,0.1);
 }
 
+.home-articles .card-body{
+  min-height: 12vh;
+}
+
 .card-footer{
   padding: .3em;
 }
@@ -202,6 +206,7 @@ img{max-width: 100%;}
 .focused-text{
   background-color: rgba(112, 128, 144, 0.2);
   max-width: 80%;
+  margin-right: 20%;
   border-top-left-radius: 1em;
   border-top-right-radius: .3em;
   border-bottom-left-radius: .3em;
