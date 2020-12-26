@@ -34,7 +34,6 @@ Handles phones
       margin-left: 3%;
       margin-right: auto;
       padding: 0;
-      position: fixed;
     }
 
     .jumbotron{
@@ -119,7 +118,6 @@ Handles tablets
 
     .navbar-brand{
       font-size: 45px;
-      position: fixed;
     }
 
     .jumbotron{
