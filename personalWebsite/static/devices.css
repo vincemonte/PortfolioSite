@@ -34,6 +34,7 @@ Handles phones
       margin-left: 3%;
       margin-right: auto;
       padding: 0;
+      position: fixed;
     }
 
     .jumbotron{
@@ -59,12 +60,12 @@ Handles phones
       font-size: 2.4em;
       padding-left: 8%;
     }
-    
+
     .home-articles .display-4{
       font-size: 2.7em;
       text-align: center;
       margin: 0;
-    } 
+    }
 
     .home-articles h1{
       margin-left: 10%;
@@ -118,6 +119,7 @@ Handles tablets
 
     .navbar-brand{
       font-size: 45px;
+      position: fixed;
     }
 
     .jumbotron{
