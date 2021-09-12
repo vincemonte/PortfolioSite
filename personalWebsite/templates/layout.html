@@ -9,7 +9,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='devices.css')}}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico')}}" type="image/x-icon"/>
+    <!--Improved Favicon-->
+  	<link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='images/favicons/apple-icon-57x57.png')}}">
+  	<link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='images/favicons/apple-icon-60x60.png')}}">
+  	<link rel="apple-touch-icon" sizes="72x72" href="{{url_for('static', filename='images/favicons/apple-icon-72x72.png')}}">
+  	<link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='images/favicons/apple-icon-76x76.png')}}">
+  	<link rel="apple-touch-icon" sizes="114x114" href="{{url_for('static', filename='images/favicons/apple-icon-114x114.png')}}">
+  	<link rel="apple-touch-icon" sizes="120x120" href="{{url_for('static', filename='images/favicons/apple-icon-120x120.png')}}">
+  	<link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static', filename='images/favicons/apple-icon-144x144.png')}}">
+  	<link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static', filename='images/favicons/apple-icon-152x152.png')}}">
+  	<link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='images/favicons/apple-icon-180x180.png')}}">
+  	<link rel="icon" type="image/png" sizes="192x192"  href="{{url_for('static', filename='images/favicons/android-icon-192x192.png')}}">
+  	<link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicons/favicon-32x32.png')}}">
+  	<link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static', filename='images/favicons/favicon-96x96.png')}}">
+  	<link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/favicons/favicon-16x16.png')}}">
+  	<link rel="manifest" href="{{url_for('static', filename='images/favicons/manifest.json')}}">
+  	<meta name="msapplication-TileColor" content="#ffffff">
+  	<meta name="msapplication-TileImage" content="{{url_for('static', filename='images/favicons/ms-icon-144x144.png')}}">
+  	<meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
     <title>Vincent Monteleone's Current Workflow: coding and personal-writing projects!</title>
@@ -19,7 +36,7 @@
     <header>
 
       <nav class="navbar fixed-top navbar-expand-xl navbar-dark" id="navigation-bar">
-        <a href="{{url_for('main.home')}}"><img class="navbar-logo" id="navbar-logo" src="{{url_for('static', filename='images/VLM_Logo_v2.png')}}" alt="restaurant logo (rooster)"></a>
+        <a href="{{url_for('main.home')}}"><img class="navbar-logo" id="navbar-logo" src="{{url_for('static', filename='images/VLM_Logo_Blue.svg')}}" alt="restaurant logo (rooster)"></a>
         <span class="navbar-brand" id="navbar-brand">Vincent Monteleone</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsing-navbar" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation" style="background:#1D2327;">
           <span class="navbar-toggler-icon"></span>
