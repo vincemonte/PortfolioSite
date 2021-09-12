@@ -34,8 +34,8 @@ function resizeNavBar(){
     document.getElementById("navigation-bar").style.padding = ".5em";
     document.getElementById("nav-list-container").style.fontSize = "21px";
     var x = document.getElementById("navbar-logo");
-    x.style.width = "65px";
-    x.style.height = "65px";
+    x.style.width = "55px";
+    x.style.height = "55px";
     x= document.getElementById("image-link");
     x.style.width = "40px";
     x.style.height = "40px";
