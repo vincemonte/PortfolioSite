@@ -1,4 +1,5 @@
-from personalWebsite import create_app()
+from personalWebsite import create_app
+
 
 app = create_app()
 
