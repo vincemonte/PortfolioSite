@@ -8,6 +8,8 @@ def set_type_image(form_type_image):
         fname = 'coding_project_type.svg'
     elif form_type_image == 'writing':
         fname = 'writing_project_type.svg'
+    elif form_type_image == 'update':
+        fname = 'update_project_type.svg'
     else:
         fname = 'photography_project_type.svg'
     path += fname

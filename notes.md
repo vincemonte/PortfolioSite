@@ -45,7 +45,7 @@
 - [Code](https://www.flaticon.com/authors/pixel-perfect)
 - [Writing](https://creativemarket.com/Becris)
 - [Photography](https://www.flaticon.com/authors/good-ware)
-
+- [Update](https://www.freepik.com" title="Freepik")
 
 #Other citations:
 - [Text Truncate Techniques](https://codepen.io/srekoble/pen/EgmyxV)

@@ -10,5 +10,5 @@ class PostForm(FlaskForm):
     content = TextAreaField('Content', validators=[Optional()])
     #possibly add other file extension types
     files= MultipleFileField('Files', validators=[FileAllowed(['jpg', 'png'])])
-    type = SelectField('Project Type', validators=[DataRequired()],choices=[('coding', 'Coding'), ('writing', 'Writing'), ('photography','Photography')])
+    type = SelectField('Project Type', validators=[DataRequired()],choices=[('update', 'Update'), ('coding', 'Coding'), ('writing', 'Writing'), ('photography','Photography')])
     submit = SubmitField('Post')

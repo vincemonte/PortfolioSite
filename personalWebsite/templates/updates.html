@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container post-section">
+  <h1 class="display-4 text-white-2 text-center">General Updates</h1>
+  <hr>
+  <div class="row text-center">
+    {% for post in posts.items %}
+    <div class="col-lg-9">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <a class = "card-title" href="{{ url_for('posts.project', title=post.title) }}">{{ post.title }}</a>
+        </div>
+        <div class="card-body">
+          <p class= "card-text max-length-card ellipsis-text text-left">{{ post.content }}</p>
+        </div>
+        <div class="card-footer text-right">
+          <small class="text-muted">Date posted: {{ post.date_posted.strftime('%m-%d-%Y') }}</small>
+        </div>
+        {% if post.author == current_user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1"href="{{ url_for('posts.update_post', proj_id=post.id) }}">Update Post</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+          </div>
+
+        {% endif %}
+      </div>
+    </div>
+    <!--Delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Delete Post?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <form action="{{ url_for('posts.delete_post', proj_id=post.id) }}" method="POST">
+                <input class="btn btn-danger" type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="container mt-5 text-center">
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+      {% if page_num %}
+        {% if posts.page == page_num %}
+          <a class="btn btn-info mb-4" href="{{ url_for('posts.updates', page=page_num) }}">{{ page_num }}</a>
+        {% else %}
+          <a class="btn btn-outline-info mb-4" href="{{ url_for('posts.updates', page=page_num) }}">{{ page_num }}</a>
+        {% endif %}
+      {% else %}
+        <small>...</small>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

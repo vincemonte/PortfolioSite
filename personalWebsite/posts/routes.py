@@ -15,6 +15,12 @@ def project(title):
     files = get_project_files(project_post)
     return render_template('project.html', project_post=project_post, files=files)
 
+@posts.route('/updates')
+def updates():
+    page = request.args.get('page', 1, type=int)
+    posts = Project.query.filter_by(type='update').order_by(Project.id.desc()).paginate(page=page, per_page=10)
+    return render_template('updates.html', posts=posts)
+
 @posts.route('/coding')
 def coding():
     page = request.args.get('page', 1, type=int)
