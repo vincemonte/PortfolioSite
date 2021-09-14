@@ -30,29 +30,42 @@ Handles phones
     }
 
     .navbar-brand{
-      font-size: 22px;
-      margin-left: 3%;
+      font-size: 20px;
+      margin-left: 6%;
       margin-right: auto;
       padding: 0;
     }
 
     .jumbotron{
-      padding: 5em 0em;
+      padding:8em 0em;
+      padding-bottom: 1em;
+
+
     }
 
     .jumbotron .container{
-      padding: 2em;
+      padding: .3em;
       max-width: 80%;
       margin-left: 10%;
       margin-right: auto;
     }
 
-    .jumbotron .display-4{
+    .jumbotron .display-5{
       font-size: 1.6em;
+      padding: .1em;
+      text-align: center;
     }
 
     .jumbotron .lead{
-      font-size: 1.2em;
+      font-size: 1.15em;
+    }
+
+    .jumbotron h5{
+      font-size: 1.4em;
+    }
+
+    .jumbotron .btn{
+      margin: auto;
     }
 
     .display-5{
@@ -71,9 +84,20 @@ Handles phones
 
     }
 
-    .home-articles .card-title{
+    .home-articles .card-header{
+      padding-left: .3em;
       padding-right: 1em;
-      padding-top: 1em;
+    }
+
+
+
+    .project_type_image{
+      width: 30px;
+      height: 30px;
+    }
+
+    .text-white-2{
+      font-size: 2em;
     }
 
     .focused-text{
@@ -93,11 +117,19 @@ Handles phones
     }
 
     .home-articles .card-body{
-      min-height: 9vh;
+      min-height: 8vh;
     }
 
     .col-md-6{
       padding: 0;
+    }
+
+    .image-photograph{
+      height: 40vh;
+    }
+
+    .carousel-item img{
+      height: 30vh;
     }
 
 }
@@ -117,17 +149,28 @@ Handles tablets
     }
 
     .navbar-brand{
-      font-size: 45px;
+      font-size: 30px;
     }
 
     .jumbotron{
       padding: 6em 0em;
+      padding-bottom: 1em;
+    }
+
+    .home-articles{
+      font-size: 1em;
+    }
+
+    .home-articles .card-header{
+      padding: .4em;
     }
 
     .home-articles .card-title{
       padding-right: 1em;
-      padding-top: 1em;
+
+      font-size: 1.1em;
     }
+
 
     .focused-text{
       max-width: 90%;
@@ -135,7 +178,7 @@ Handles tablets
     }
 
     .jumbotron .container{
-      padding: 2em;
+      padding-top: 2em;
       max-width: 80%;
       margin-left: 10%;
       margin-right: auto;
@@ -145,9 +188,22 @@ Handles tablets
       max-width: 90%;
       margin-left: 5%;
       margin-right: auto;
+
     }
 
+
+
+    .project_type_image{
+      width: 30px;
+      height: 30px;
+    }
+
+
     .home-articles .card-body{
-      min-height: 8vh;
+      min-height: 10vh;
+    }
+
+    .carousel-item img{
+      height: 40vh;
     }
   }

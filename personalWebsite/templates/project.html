@@ -2,7 +2,7 @@
 {% block content %}
   <div class="container project-post post-section">
     <h1 class="display-5 page-header m-0">{{ project_post.title }}</h1>
-    <hr class="my-2">
+    <hr class="my-3">
     {%if project_post.content %}
      <div class="focused-text">
        <p>{{ project_post.content }}</p>
@@ -12,15 +12,18 @@
       <!--If there is only one image to load we won't enter the carousel-->
        {% if files|length == 1 %}
         {% if project_post.type != "photography"%}
-         <h3 class="text-white"><i>Associated Pics:</i></h3>
-         <hr class="my-2">
-        {% endif %}
+         <hr class="my-4">
+         <div class="text-center">
+          <img class="image-backdrop" src="{{url_for('static', filename=files[0])}}">
+        </div>
+        {% else %}
        <div class="text-center">
-        <img class="image-backdrop" src="{{url_for('static', filename=files[0])}}">
+        <img class="image-photograph" src="{{url_for('static', filename=files[0])}}">
       </div>
+        {% endif %}
        {% else %}
-        <h3 class="text-white"><i>Pictures from the Project:</i></h3>
-        <hr class="my-2">
+        <!--<h3 class="text-white"><i>Pictures from the Project:</i></h3>-->
+        <hr class="my-4">
          <!--If this is the first index of the loop, then we can -->
          <div id="postCarousel" class="carousel slide" data-ride="carousel">
            <ol class="carousel-indicators">
@@ -57,7 +60,7 @@
          </div>
       {% endif %}
      {% endif %}
-     <small class="text-muted">{{project_post.date_posted.strftime('%m-%d-%Y')}}</small>
+     <small class="text-muted ml-4">{{project_post.date_posted.strftime('%m-%d-%Y')}}</small>
 
      {% if project_post.author == current_user %}
        <div>

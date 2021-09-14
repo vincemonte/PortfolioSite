@@ -20,6 +20,10 @@ img{max-width: 100%;}
 
 .page-header{
   color: #DDDDDD;
+  font-family: 'Crimson Text', serif;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .navbar {
@@ -96,16 +100,19 @@ img{max-width: 100%;}
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
   font-family: 'Crimson Text', serif;
-  padding: 7em 5em;
+  padding-top: 17em;
+  padding-bottom: 3em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .jumbotron .container{
   background-color: rgba(20, 20, 21, 0.75);
-  padding: 1.6em;
+  padding: 1.2em;
   border-radius: 2em;
-  max-width: 60%;
-  margin-left: 10%;
-  margin-right: auto;
+  max-width: 80%;
+  margin-right: 15%;
+  margin-left: auto;
 }
 
 .home-articles h1{
@@ -175,6 +182,16 @@ img{max-width: 100%;}
 
 .image-backdrop{
   background-color: rgba(20, 20, 21, 0.75);
+  height: 60vh;
+  margin-left: 20%;
+  padding: 1em 2em;
+  border-radius: .3em;
+}
+
+.image-photograph{
+  background-color: rgba(20, 20, 21, 0.75);
+  height: 75vh;
+  margin-right: 10%;
   padding: 1em 2em;
   border-radius: .3em;
 }
@@ -220,6 +237,9 @@ img{max-width: 100%;}
   font-size: 17px;
   padding: 1.4em;
   color: #EEEEEE;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 6px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
 }
 
 .text-white-2{
@@ -227,6 +247,8 @@ img{max-width: 100%;}
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);
+  letter-spacing: 3px;
+  font-size: 3em;
 }
 
 .form-section{
