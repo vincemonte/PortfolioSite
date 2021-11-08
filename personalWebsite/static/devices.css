@@ -128,8 +128,13 @@ Handles phones
       height: 40vh;
     }
 
+<<<<<<< HEAD
     .image-backdrop{
      height: 40vh;
+=======
+    .image-backdrop {
+      height: 40vh;
+>>>>>>> 85c52d4c39a61eeee21aaae623dd273ed40727f1
     }
 
     .carousel-item img{
