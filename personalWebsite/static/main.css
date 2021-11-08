@@ -60,6 +60,7 @@ img{max-width: 100%;}
   -webkit-text-stroke: .5px #282828;
   text-shadow: 1px 1.5px 1.5px black;
   transition: 1.65s ease;
+  visibility: hidden;
 }
 
 
@@ -93,7 +94,7 @@ img{max-width: 100%;}
 
 
 .jumbotron{
-  background-image: url(images/dummy_stance.JPG);
+  background-image: url(images/dummy_stance.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
